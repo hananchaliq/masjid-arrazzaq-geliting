@@ -1,22 +1,4 @@
 {
    "version": 2,
-   "functions": {
-      "api/**/*.php": {
-         "runtime": "vercel-php@0.7.3"
-      }
-   },
-   "routes": [
-      {
-         "src": "/api/uploads/news/(.*)",
-         "dest": "/api/uploads/news/$1"
-      },
-      {
-         "src": "/api/(.*)",
-         "dest": "/api/$1"
-      },
-      {
-         "src": "/(.*)",
-         "dest": "/$1"
-      }
-   ]
+   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
