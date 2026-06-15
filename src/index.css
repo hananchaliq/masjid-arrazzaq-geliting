@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ==========================================
+   1. FONTS & THEME CONFIGURATION (Tailwind v4)
+   ========================================== */
+/* Kita panggil font IBM Plex Sans pilihanmu langsung dari Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+@theme {
+   /* Set font-sans Tailwind v4 agar default-nya mengarah ke IBM Plex Sans */
+   --font-sans: "IBM Plex Sans", sans-serif;
+}
+
+/* ==========================================
+   2. GLOBAL RESET & TOTAL FONT OVERRIDE
+   ========================================== */
+@layer base {
+   *,
+   ::before,
+   ::after {
+      /* Paksa semua elemen, button, input, dan teks pake IBM Plex Sans */
+      font-family: var(--font-sans) !important;
+      cursor: none !important;
+      scroll-behavior: smooth;
+   }
+
+   body {
+      margin: 0;
+      background: #000;
+   }
+}
+
+/* ==========================================
+   3. COMPONENTS (Bento & Glassmorphism)
+   ========================================== */
+@utility bento-card {
+   background-color: rgba(24, 24, 27, 0.5);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   border-radius: 2rem;
+   padding: 2rem;
+   backdrop-filter: blur(12px);
+   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+   &:hover {
+      border-color: rgba(59, 130, 246, 0.5);
+   }
+}
+
+@utility glass-input {
+   width: 100%;
+   background-color: rgba(255, 255, 255, 0.05);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   border-radius: 0.75rem;
+   padding: 0.75rem 1rem;
+   color: #fff;
+   transition: all 0.2s ease;
+
+   &:focus {
+      outline: none;
+      border-color: #2563eb;
+   }
+}
+
+/* Sisa kode efek visual (.grid-bg, .light, .cursor-line, dll) tetap sama di bawahnya... */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   font-family: "Inter", sans-serif;
+   background: #020617;
+   color: white;
+   overflow-x: hidden;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+
+::-webkit-scrollbar-track {
+   background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+   background: linear-gradient(to bottom, #2563eb, #38bdf8);
+   border-radius: 999px;
+}
+
+/* SELECTION */
+
+::selection {
+   background: #2563eb;
+   color: white;
+}

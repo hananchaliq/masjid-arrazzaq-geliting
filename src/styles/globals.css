@@ -1,0 +1,182 @@
+/* ==========================================
+   1. SEMUA @IMPORT WAJIB DI BARIS PALING ATAS
+   ========================================== */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+@import "tailwindcss";
+
+/* ==========================================
+   2. RE-GISTRASI THEME TAILWIND V4
+   ========================================== */
+@theme {
+   --font-sans: "IBM Plex Sans", sans-serif;
+}
+
+/* ==========================================
+   3. GLOBAL RESET & TOTAL FONT OVERRIDE
+   ========================================== */
+html,
+body,
+*,
+::before,
+::after {
+   font-family: "IBM Plex Sans", sans-serif !important;
+   cursor: none !important;
+   scroll-behavior: smooth;
+}
+
+/* ==========================================
+   3. GLOBAL RESET & TOTAL FONT OVERRIDE
+   ========================================== */
+:root {
+   --v-bg: #000000;
+   --v-card: #0a0a0a;
+   --v-border: #1f1f1f;
+   --v-text-main: #ffffff;
+   --v-text-muted: #a1a1a1;
+
+   /* Default Jemaah / Public (Biru) */
+   --scrollbar-color: #2563eb;
+   --scrollbar-hover: #1d4ed8;
+}
+
+/* Jika tag html / body memiliki class admin-mode, warnanya diganti kuning */
+html.admin-mode,
+body.admin-mode {
+   --scrollbar-color: #eab308 !important;
+   --scrollbar-hover: #ca8a04 !important;
+}
+
+/* ==========================================
+   4. INTERACTIVE EFFECTS & UTILITIES
+   ========================================== */
+/* Scrollbar Utama Browser */
+::-webkit-scrollbar {
+   width: 8px;
+   height: 8px;
+}
+
+::-webkit-scrollbar-track {
+   background: #020617 !important;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--scrollbar-color) !important;
+   border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: var(--scrollbar-hover) !important;
+}
+
+/* Keyframe Animasi Fade Up React Layout */
+@keyframes fadeUp {
+   from {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+/* SweetAlert2 Emas Customization */
+.swal2-popup.swal-gold {
+   border: 1px solid rgba(255, 255, 255, 0.06);
+   border-left: 3px solid #eab308 !important;
+   border-radius: 18px !important;
+   box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(234, 179, 8, 0.08) !important;
+}
+
+.swal2-loader {
+   border-color: #eab308 transparent #eab308 transparent !important;
+}
+
+body {
+   background: #020617;
+   color: white;
+   overflow-x: hidden;
+}
+
+/* ==========================================
+   4. INTERACTIVE EFFECTS & UTILITIES
+   ========================================== */
+/* Scrollbar Utama Browser (Menggunakan Variabel Dinamis) */
+::-webkit-scrollbar {
+   width: 8px;
+   height: 8px; /* Untuk scrollbar horizontal */
+}
+
+::-webkit-scrollbar-track {
+   background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+   background: var(--scrollbar-color);
+   border-radius: 999px;
+   transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: var(--scrollbar-hover);
+}
+
+/* Cursor Glow Tracking Effect */
+.cursor-glow {
+   position: fixed;
+   width: 400px;
+   height: 400px;
+   border-radius: 999px;
+   pointer-events: none;
+   background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.08) 30%, transparent 70%);
+   transform: translate(-50%, -50%);
+   z-index: 1;
+}
+
+/* 3D Card Hover Effect */
+.card-3d {
+   transform-style: preserve-3d;
+   transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+}
+
+.card-3d:hover {
+   transform: rotateX(8deg) rotateY(-8deg) translateY(-10px);
+   box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.4),
+      0 0 50px rgba(59, 130, 246, 0.2);
+}
+
+@keyframes slideFade {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+@keyframes pulseGlow {
+   0%,
+   100% {
+      opacity: 0.4;
+      transform: scale(1);
+   }
+   50% {
+      opacity: 1;
+      transform: scale(1.12);
+   }
+}
+@keyframes floatSlow {
+   0%,
+   100% {
+      transform: translateY(0px);
+   }
+   50% {
+      transform: translateY(-8px);
+   }
+}
