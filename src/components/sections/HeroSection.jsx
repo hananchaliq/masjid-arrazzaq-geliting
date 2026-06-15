@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Compass, Calendar, BookOpen, ArrowDown } from "lucide-react";
 import { ThemeContext } from "../../context/ThemeContext";
+import masjidImg from "@/assets/img/masjid.png";
 
 export default function HeroSection() {
    const containerRef = useRef(null);
@@ -11,6 +12,8 @@ export default function HeroSection() {
       target: containerRef,
       offset: ["start start", "end start"],
    });
+
+   const heroImage = masjidImg;
 
    // SINKRONISASI TEMA GLOBAL
    const { dark } = useContext(ThemeContext);
@@ -24,7 +27,6 @@ export default function HeroSection() {
       eventTime: "Ahad, 09:00 WIB",
       dailyVerse: "Al-Baqarah: 152",
       verseExcerpt: "Ingatlah kepada-Ku, Aku pun ingat kepadamu...",
-      heroImage: "/src/assets/img/masjid.png",
    });
 
    const [isDesktop, setIsDesktop] = useState(false);
@@ -158,7 +160,7 @@ export default function HeroSection() {
 
                      {/* Bingkai Gambar dengan Parallaks Scroll */}
                      <motion.div style={{ y: yImage }} className="relative cursor-target w-full h-[120%] overflow-hidden rounded-t-[190px] z-10">
-                        <img src={contentData.heroImage} alt="Arsitektur Utama Masjid" className="w-full h-full object-cover group-hover:scale-[1.04] transition-all duration-[2s] ease-out object-center opacity-95" />
+                        <img src={heroImage} alt="Arsitektur Utama Masjid" className="w-full h-full object-cover group-hover:scale-[1.04] transition-all duration-[2s] ease-out object-center opacity-95" />
                         <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-40 transition-colors duration-500 ${dark ? "from-[#030712]/80" : "from-[#F8FBFF]/80"}`} />
                      </motion.div>
                   </div>
