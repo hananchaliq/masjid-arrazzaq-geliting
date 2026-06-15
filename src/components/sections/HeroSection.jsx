@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useContext } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Compass, Calendar, BookOpen, ArrowDown } from "lucide-react";
 import { ThemeContext } from "../../context/ThemeContext";
-import masjidImg from "@/assets/img/masjid.png";
+import masjidImg from "../../assets/img/masjid.png";
 
 export default function HeroSection() {
    const containerRef = useRef(null);
